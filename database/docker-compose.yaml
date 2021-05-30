@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+  db:
+    build: .
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql
+      MYSQL_DATABASE: books_manager
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
